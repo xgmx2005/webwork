@@ -1,0 +1,134 @@
+/* 通用重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===================== 头部区域 ===================== */
+/* h2作为logo，固定在顶部，设置背景色，并采用flex布局使导航位于右侧 */
+h2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 10;
+    background-color: #6d0689;
+    /* 可根据需要修改背景色 */
+    color: #fff;
+    padding: 1px ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+/* ===================== 导航区域 ===================== */
+/* 将nav放置在h2右侧 */
+/* 给 nav 设置背景和合适的定位 */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #6d0689;
+    display: flex;
+    justify-content: right;
+    padding: 10px;
+    z-index: 500;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 15px;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #8710be;
+    border-radius: 5px;
+}
+nav ul li a.active {
+    background-color: #8710be;
+}
+/* ===================== 内容区域 ===================== */
+/* div.card宽度为页面宽度70%，居中显示，并在logo下方完整展示（上边距预留固定头部高度） */
+div.card {
+    width: 70%;
+    margin: 120px auto 0;
+    border: 1px solid #8710be;
+    border-radius: 10px;
+    box-shadow: 0em 0em 1em 0.2em #8710be;
+    /* 上边距根据h2高度调整 */
+    display: flex;
+    /* 两个section横向流动 */
+    gap: 20px;
+}
+
+/* 两个section区域各占一半空间 */
+div.card section {
+    flex: 1;
+}
+
+/* 左侧图片：设置为圆形 */
+div.card section:first-of-type img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* 右侧区域 */
+/* 标题文字：设置字体颜色、字号，并在下方添加同色边框 */
+div.card section:last-of-type p:first-of-type {
+    color: #9a3ce7;
+    /* 标题文字颜色 */
+    font-size: 24px;
+    /* 标题字号 */
+    border-bottom: 2px solid #9a3ce7;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+/* 简介文字：设置背景图、行高及文字大小 */
+div.card section:last-of-type p:last-of-type {
+    background: no-repeat center;
+    background-size: cover;
+    
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 10px;
+    color: #333;
+}
+
+/* ===================== 页脚区域 ===================== */
+/* footer：设置高度、背景色、顶部边框，并使内部内容居中 */
+footer {
+    margin: 20px;
+    height: 60px;
+    background-color: #8710be;
+    border-top: 1px solid #9a3ce7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* footer内部超链接：默认无下划线，设定颜色，居中显示 */
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+/* 鼠标悬停时显示下划线 */
+footer a:hover {
+    text-decoration: underline;
+}

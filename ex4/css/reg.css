@@ -1,0 +1,130 @@
+/* 通用重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 页面整体样式 */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f3e5f5;
+    /* 浅紫色背景 */
+    color: #4a148c;
+    /* 深紫色文字 */
+    padding: 20px;
+}
+/* 通用重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===================== 头部区域 ===================== */
+/* h2作为logo，固定在顶部，设置背景色，并采用flex布局使导航位于右侧 */
+h2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 10;
+    background-color: #6d0689;
+    /* 可根据需要修改背景色 */
+    color: #fff;
+    padding: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+/* ===================== 导航区域 ===================== */
+/* 将nav放置在h2右侧 */
+/* 给 nav 设置背景和合适的定位 */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #6d0689;
+    display: flex;
+    justify-content: right;
+    padding: 10px;
+    z-index: 500;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 15px;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #8710be;
+    border-radius: 5px;
+}
+
+nav ul li a.active {
+    background-color: #8710be;
+}
+
+/* 表单容器 */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 表单各项 */
+form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #4a148c;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="password"],
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* 单选、复选框设置适当间距 */
+form input[type="radio"],
+form input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+/* 提交按钮 */
+form input[type="submit"] {
+    background-color: #7b1fa2;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #4a148c;
+}

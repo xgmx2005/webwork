@@ -1,0 +1,112 @@
+/* 保留原有的整体背景渐变 */
+body {
+    background: linear-gradient(135deg, #2C003E, #4A0072);
+    color: #E5DBFF;
+}
+header {
+    background: rgba(74, 0, 114, 0.9);
+    /* 半透明紫色 */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 24px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+/* ========== PC端侧边导航：仅在 md 及以上生效 ========== */
+@media (min-width: 768px) {
+    .side-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 60px;
+        height: 100vh;
+        background: rgba(74, 0, 114, 0.8);
+        padding-top: 60px;
+        transition: width 0.3s ease, box-shadow 0.3s ease;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+        z-index: 999;
+    }
+
+    /* 悬停展开 */
+    .side-nav:hover {
+        width: 200px;
+        box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    /* 品牌标识：侧边导航顶部 */
+    .side-nav-brand {
+        text-align: center;
+        color: #fff;
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .side-nav:hover .side-nav-brand {
+        text-align: left;
+        padding-left: 20px;
+    }
+
+    .side-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .side-nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .side-nav ul li a {
+        text-decoration: none;
+        color: white;
+        padding: 15px;
+        display: block;
+        background: rgba(165, 105, 189, 0.3);
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+
+    .side-nav:hover ul li a {
+        text-align: left;
+        padding-left: 20px;
+    }
+
+    .side-nav ul li a:hover {
+        background: rgba(165, 105, 189, 0.7);
+        transform: translateX(5px);
+    }
+
+    /* 当侧边导航展开时，主内容区域向右偏移 */
+    .main-content {
+        margin-left: 60px;
+        /* 与 side-nav 初始宽度一致 */
+        transition: margin-left 0.3s ease;
+    }
+
+    .side-nav:hover~.main-content {
+        margin-left: 200px;
+        /* 与 side-nav:hover 时的宽度一致 */
+    }
+}
+
+/* ========== 卡片自定义样式 ========== */
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.4);
+}
+
+.card .card-text {
+    color: #E5DBFF;
+}
+

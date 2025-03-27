@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>个人简介 - Demo</title>
+    <!-- 引入本地 Bootstrap CSS -->
+    <link rel="stylesheet" href="../bootstrap-4.6.2-dist/css/bootstrap.min.css">
+    <!-- 可选：Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- 引入自定义样式（包含 header 样式等） -->
+    <link rel="stylesheet" href="../css/style-bootstrap.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+    <!-- ====== 头部区域 ====== -->
+    <header>
+        <h2>G.E.M.</h2>
+    </header>
+    <!-- 
+    ========== PC端侧边导航（仅中大屏幕可见） ========== 
+    .d-none d-md-block：在md及以上尺寸显示，在小屏隐藏
+  -->
+
+    <nav class="side-nav d-none d-md-block">
+        <!-- 品牌放在侧边导航顶端 -->
+        <div class="side-nav-brand">
+            <i class="bi bi-music-note-beamed"></i> G.E.M.
+        </div>
+        <ul>
+            <li><a href="index-bootstrap.html" class="active">首页</a></li>
+            <li><a href="course.html">我的课表</a></li>
+            <li><a href="login.html">登录</a></li>
+            <li><a href="reg.html">注册</a></li>
+        </ul>
+    </nav>
+
+    <!-- 
+    ========== 移动端顶部导航栏（仅小屏幕可见） ==========
+    .d-block d-md-none：在小屏显示，在md及以上尺寸隐藏
+    这里用与侧边导航一致的紫色背景，以保持风格统一
+  -->
+    <nav class="navbar navbar-expand-md navbar-dark d-block d-md-none" style="background: rgba(74, 0, 114, 0.9);">
+        <!-- 品牌标识 -->
+        <a class="navbar-brand" href="#">
+            <i class="bi bi-music-note-beamed"></i> G.E.M.
+        </a>
+        <!-- 移动端折叠按钮 -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobileNav"
+            aria-controls="mobileNav" aria-expanded="false" aria-label="切换导航">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- 折叠导航菜单 -->
+        <div class="collapse navbar-collapse" id="mobileNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active"><a class="nav-link" href="index-bootstrap.html">首页</a></li>
+                <li class="nav-item"><a class="nav-link" href="course.html">我的课表</a></li>
+                <li class="nav-item"><a class="nav-link" href="login.html">登录</a></li>
+                <li class="nav-item"><a class="nav-link" href="reg.html">注册</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- ====== 主体内容 ====== -->
+    <!-- container + row + justify-content-center 可以让内部内容在大视口下居中 -->
+    <main class="container my-5 flex-fill">
+        <div class="row justify-content-center">
+            <!-- 设定一个合适的列宽度，如 col-md-8 或 col-lg-6 等 -->
+            <div class="col-md-8">
+                <div class="card shadow-lg">
+                    <div class="row no-gutters">
+                        <!-- 图片区域，使用 rounded-circle 让头像变成圆形 -->
+                        <div class="col-md-4 text-center p-3">
+                            <img src="../images/tx.jpg" class="img-fluid rounded-circle" alt="本人" title="本人"
+                                style="max-width: 180px;" />
+                        </div>
+                        <!-- 文字描述区域 -->
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title text-primary border-bottom pb-2">
+                                    个人简介
+                                </h5>
+                                <p class="card-text">
+                                    邓紫棋（G.E.M.），本名邓诗颖，1991年8月16日出生于上海市，
+                                    华语流行乐女歌手、词曲作者、音乐制作人。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end card -->
+            </div><!-- end col-md-8 -->
+        </div><!-- end row -->
+    </main>
+
+    <!-- ====== 页脚 ====== -->
+    <footer class="bg-dark text-center text-white py-3 mt-auto"
+    style="background: linear-gradient(135deg, #2C003E, #4A0072);">
+        <a href="mailto:2463323447@qq.com" class="text-white" style="text-decoration: none;">
+            📫 联系我
+        </a>
+    </footer>
+
+    <!-- Bootstrap JS、jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="../bootstrap-4.6.2-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    /* padding: 0; */
+}
+body{
+    color: #330000;
+    font-family: Verdana;
+    background-color: #ffffcc;
+}
+.sidebar ul{
+    list-style: none;
+}
+#container{
+    width: 70%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border: 1px solid #000;
+}
+/* 头部眉页区域背景色 */
+#header,#footer{
+    background:#ccaa66;
+}
+#header{
+    height: 100px;
+    text-align: center;
+    border-bottom: 1px solid #000;
+    }
+#header h1{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#main{
+    background:#e8d882;
+    /* border: 1px solid #000; */
+    overflow: hidden;
+}
+.sidebar{
+    background:#e8d882;
+    width: 23%;
+    float: left;
+}
+.mainbar{
+    /* padding-left: 12px; */
+    background:#f1e8b0;
+    width: 76%;
+    float: right;
+    border-left: 1px solid #000;
+}
+.mainbar img{
+    width: 30%;
+    float: right;
+    position: relative;
+    left: -200px;
+    top: -100px;
+}
+#footer{
+    clear: both;
+    height: 50px;
+    text-align: center;
+    border-top: 1px solid #000;
+}
+a{
+    text-decoration: none;
+}
+#footer a{
+    text-decoration: underline;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"> 
+    <title>菜鸟教程(runoob.com)</title> 
+</head>
+
+<body>
+
+    <h2>表单</h2>
+
+    <form action="/" method="post">
+    
+        <label for="name">用户名:</label>
+        <input type="text" id="name" name="name" required>
+
+        <br>
+
+        <label for="password">密码:</label>
+        <input type="password" id="password" name="password" required>
+
+        <br>
+
+        <label>性别:</label>
+        <input type="radio" id="male" name="gender" value="male" checked>
+        <label for="male">男</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">女</label>
+
+        <br>
+
+        <input type="checkbox" id="subscribe" name="subscribe" checked>
+        <label for="subscribe">是否填写兴趣爱好</label>
+        <br>
+
+        <label for="country">兴趣爱好:</label>
+        <select id="country" name="country">
+            <option value="cf">吃饭</option>
+            <option value="nba">打篮球</option>
+            <option value="coed">写代码</option>
+        </select>
+
+        <br>
+        <input type="submit" value="注册">
+    </form>
+
+</body>
+
+</html>
