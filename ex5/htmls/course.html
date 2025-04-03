@@ -39,7 +39,6 @@
         </ul>
     </nav>
     <h2>我的课表</h2>
-   
 
     <table>
         <tr>
@@ -54,131 +53,293 @@
         </tr>
         <tr>
             <td>第1节</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
         </tr>
         <tr>
             <td>第2节</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
         </tr>
         <tr>
             <td>第3节</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
         </tr>
         <tr>
             <td>第4节</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
         </tr>
         <tr>
             <td>第5节</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
         </tr>
-        <tr> 
+        <tr>
             <td colspan="8">午休</td>
-           
         </tr>
         <tr>
             <td>第6节</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
             <td rowspan="4">程序设计</td>
             <td rowspan="4">程序设计</td>
-            <td></td>
-            <td></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
         </tr>
         <tr>
             <td>第7节</td>
-            <td></td>
-            <td></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
             <td rowspan="3">课外答疑</td>
-            <td></td>
-            <td></td>
-            
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
         </tr>
         <tr>
             <td>第8节</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            
-            
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
         </tr>
-        
         <tr>
             <td>第9节</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
         </tr>
         <tr>
             <td colspan="8">晚饭时间</td>
-        
         </tr>
         <tr>
             <td>第10节</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
         </tr>
         <tr>
             <td>第11节</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
         </tr>
         <tr>
             <td>第12节</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
         </tr>
-        
     </table>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const table = document.querySelector('table');
+// 选择所有可编辑的单元格（排除有colspan或rowspan的标题单元格）
+const cells = table.querySelectorAll('td:not([colspan]):not([rowspan])');
+
+cells.forEach(cell => {
+// 创建容器
+const container = document.createElement('div');
+container.className = 'course-container';
+cell.appendChild(container);
+
+// 初始化单元格内容
+const initialText = cell.innerText.trim();
+cell.innerText = ''; // 清空原始内容，避免重复
+
+if (initialText !== '') {
+// 有课程信息
+const courseName = document.createElement('span');
+courseName.className = 'course-name';
+courseName.innerText = initialText;
+container.appendChild(courseName);
+
+const editIcon = document.createElement('span');
+editIcon.className = 'edit-icon';
+editIcon.innerText = '✏️';
+container.appendChild(editIcon);
+
+const deleteIcon = document.createElement('span');
+deleteIcon.className = 'delete-icon';
+deleteIcon.innerText = '🗑️';
+container.appendChild(deleteIcon);
+
+// 删除功能
+deleteIcon.addEventListener('click', function() {
+container.innerHTML = '';
+const addIcon = document.createElement('span');
+addIcon.className = 'add-icon';
+addIcon.innerText = '➕';
+container.appendChild(addIcon);
+addAddEvent(addIcon, container);
+});
+
+// 编辑功能
+editIcon.addEventListener('click', function() {
+const input = document.createElement('input');
+input.type = 'text';
+input.value = courseName.innerText;
+container.innerHTML = '';
+container.appendChild(input);
+input.focus();
+
+input.addEventListener('blur', function() {
+const newValue = input.value.trim();
+if (newValue === '') {
+const confirmDelete = confirm('是否确认输入信息为空会删除课程？');
+if (confirmDelete) {
+container.innerHTML = '';
+const addIcon = document.createElement('span');
+addIcon.className = 'add-icon';
+addIcon.innerText = '➕';
+container.appendChild(addIcon);
+addAddEvent(addIcon, container);
+} else {
+input.value = courseName.innerText;
+input.focus(); // 保持编辑状态
+}
+} else {
+courseName.innerText = newValue;
+container.innerHTML = '';
+container.appendChild(courseName);
+container.appendChild(editIcon);
+container.appendChild(deleteIcon);
+}
+});
+});
+} else {
+// 没有课程信息
+const addIcon = document.createElement('span');
+addIcon.className = 'add-icon';
+addIcon.innerText = '➕';
+container.appendChild(addIcon);
+addAddEvent(addIcon, container);
+}
+});
+
+// 新增功能的事件绑定函数
+function addAddEvent(addIcon, container) {
+addIcon.addEventListener('click', function() {
+const input = document.createElement('input');
+input.type = 'text';
+container.innerHTML = '';
+container.appendChild(input);
+input.focus();
+
+input.addEventListener('blur', function() {
+const newValue = input.value.trim();
+if (newValue !== '') {
+const courseName = document.createElement('span');
+courseName.className = 'course-name';
+courseName.innerText = newValue;
+container.innerHTML = '';
+container.appendChild(courseName);
+
+const editIcon = document.createElement('span');
+editIcon.className = 'edit-icon';
+editIcon.innerText = '✏️';
+container.appendChild(editIcon);
+
+const deleteIcon = document.createElement('span');
+deleteIcon.className = 'delete-icon';
+deleteIcon.innerText = '🗑️';
+container.appendChild(deleteIcon);
+
+// 为新增的课程绑定编辑事件
+editIcon.addEventListener('click', function() {
+const input = document.createElement('input');
+input.type = 'text';
+input.value = courseName.innerText;
+container.innerHTML = '';
+container.appendChild(input);
+input.focus();
+
+input.addEventListener('blur', function() {
+const newValue = input.value.trim();
+if (newValue === '') {
+const confirmDelete = confirm('是否确认输入信息为空会删除课程？');
+if (confirmDelete) {
+container.innerHTML = '';
+const addIcon = document.createElement('span');
+addIcon.className = 'add-icon';
+addIcon.innerText = '➕';
+container.appendChild(addIcon);
+addAddEvent(addIcon, container);
+} else {
+input.value = courseName.innerText;
+input.focus();
+}
+} else {
+courseName.innerText = newValue;
+container.innerHTML = '';
+container.appendChild(courseName);
+container.appendChild(editIcon);
+container.appendChild(deleteIcon);
+}
+});
+});
+
+// 为新增的课程绑定删除事件
+deleteIcon.addEventListener('click', function() {
+container.innerHTML = '';
+const addIcon = document.createElement('span');
+addIcon.className = 'add-icon';
+addIcon.innerText = '➕';
+container.appendChild(addIcon);
+addAddEvent(addIcon, container);
+});
+} else {
+container.innerHTML = '';
+const addIcon = document.createElement('span');
+addIcon.className = 'add-icon';
+addIcon.innerText = '➕';
+container.appendChild(addIcon);
+addAddEvent(addIcon, container);
+}
+});
+});
+}
+});
+</script>
 </body>
 
 </html>
