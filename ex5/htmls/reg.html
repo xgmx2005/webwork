@@ -11,75 +11,56 @@
 </head>
 
 <body>
-    <!-- 头部和导航 -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="index.html">首页</a>
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="course.html">我的课表</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login.html">登录</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="reg.html">注册 <span class="sr-only">(current)</span></a>
-                </li>
-            </ul>
-        </div>
+    <!-- 头部和导航（可以使用 header.html 引入公共头部） -->
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">首页</a></li>
+            <li><a href="course.html">我的课表</a></li>
+            <li><a href="login.html">登录</a></li>
+            <li><a href="reg.html">注册</a></li>
+        </ul>
     </nav>
+    <h2>注册</h2>
 
-    <!-- 注册表单容器 -->
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <!-- 使用card包裹表单 -->
-                <div class="card mt-5">
-                    <div class="card-body">
-                        <h3 class="card-title text-center">注册</h3>
-                        <form id="regForm">
-                            <div class="form-group">
-                                <label for="username">用户名:</label>
-                                <input type="text" class="form-control" id="username" placeholder="请输入用户名" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="password">密码:</label>
-                                <input type="password" class="form-control" id="password" placeholder="请输入密码" required>
-                            </div>
-                            <div class="form-group">
-                                <label>性别:</label>
-                                <div class="form-check form-check-inline">
-                                    <input type="radio" class="form-check-input" id="male" name="gender" value="male"
-                                        checked>
-                                    <label class="form-check-label" for="male">男</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input type="radio" class="form-check-input" id="female" name="gender"
-                                        value="female">
-                                    <label class="form-check-label" for="female">女</label>
-                                </div>
-                            </div>
-                            <div class="form-group form-check">
-                                <input type="checkbox" class="form-check-input" id="interestCheckbox">
-                                <label class="form-check-label" for="interestCheckbox">是否填写兴趣爱好</label>
-                            </div>
-                            <div class="form-group" id="interestGroup" style="display: none;">
-                                <label for="interestSelect">兴趣爱好:</label>
-                                <select class="form-control" id="interestSelect">
-                                    <option value="eating">吃饭</option>
-                                    <option value="basketball">打篮球</option>
-                                    <option value="coding">写代码</option>
-                                </select>
-                            </div>
-                            <input type="submit" class="btn btn-primary btn-block" id="submitBtn" value="注册">
-                        </form>
-                    </div>
+    <!-- 表单区域 -->
+    <div class="container mt-5 pt-5">
+        <form id="regForm">
+            <div class="form-group">
+                <label for="username">用户名:</label>
+                <input type="text" class="form-control" id="username" placeholder="请输入用户名" required>
+            </div>
+            <div class="form-group">
+                <label for="password">密码:</label>
+                <input type="password" class="form-control" id="password" placeholder="请输入密码" required>
+            </div>
+            <div class="form-group">
+                <label>性别:</label>
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" id="male" name="gender" value="male" checked>
+                    <label class="form-check-label" for="male">男</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" id="female" name="gender" value="female">
+                    <label class="form-check-label" for="female">女</label>
                 </div>
             </div>
-        </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="interestCheckbox">
+                <label class="form-check-label" for="interestCheckbox">是否填写兴趣爱好</label>
+            </div>
+            <div class="form-group" id="interestGroup" style="display: none;">
+                <label for="interestSelect">兴趣爱好:</label>
+                <select class="form-control" id="interestSelect">
+                    <option value="eating">吃饭</option>
+                    <option value="basketball">打篮球</option>
+                    <option value="coding">写代码</option>
+                </select>
+            </div>
+            <input type="submit" class="btn btn-primary btn-block" id="submitBtn" value="注册">
+        </form>
     </div>
 
-    <!-- 引入 jQuery 和 Bootstrap JS -->
+    <!-- 引入 Bootstrap 和 jQuery 的依赖 -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- 引入自定义 JS -->

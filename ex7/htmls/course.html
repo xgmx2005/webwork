@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课程表</title>
+    <!-- 引入 Bootstrap 和 Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- 引入自定义样式 -->
+    <link rel="stylesheet" href="../css/course.css">
+</head>
+
+<body>
+    <!-- 自定义紫色导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+        <a class="navbar-brand" href="#">我的课程管理</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="切换导航">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">首页</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">课表</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">登录</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">注册</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container my-4">
+        <h2 class="text-center mb-4">我的课程表</h2>
+        <table class="table table-bordered course-table" id="courseTable">
+            <thead>
+                <tr>
+                    <th>时间</th>
+                    <th>周一</th>
+                    <th>周二</th>
+                    <th>周三</th>
+                    <th>周四</th>
+                    <th>周五</th>
+                    <th>周六</th>
+                    <th>周日</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 12行课时 -->
+                <!-- 注意：第一列为课时序号，不参与存储 -->
+                <!-- 以下每行后面 7 个单元格的 data-row 和 data-col 会在 JS 中赋值 -->
+                <tr>
+                    <td>第1节</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>第2节</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>第3节</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>第4节</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>第5节</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>第6节</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>第7节</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>第8节</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>第9节</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>第10节</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>第11节</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>第12节</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3">
+        版权所有 © 2025
+    </footer>
+
+    <!-- 引入 jQuery、Popper 和 Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        /**********************
+         *  持久化数据相关
+         **********************/
+        // 定义课表数据结构：12行 × 7列二维数组
+        let courseData = [];
+        const STORAGE_KEY = 'courseData';
+
+        // 从 localStorage 加载数据，没有则初始化
+        function loadCourseData() {
+            const data = localStorage.getItem(STORAGE_KEY);
+            if (data) {
+                courseData = JSON.parse(data);
+            } else {
+                // 初始化空数据：12行，每行7个空字符串
+                courseData = Array.from({ length: 12 }, () => Array(7).fill(''));
+            }
+        }
+
+        // 保存数据到 localStorage
+        function saveCourseData() {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(courseData));
+        }
+
+        /**********************
+         *  DOM 操作相关
+         **********************/
+        // 更新单元格内容，根据当前数据决定显示“新增”或“编辑/删除”图标
+        function updateCell(cell, row, col, courseText) {
+            // 更新数据模型
+            courseData[row][col] = courseText;
+            saveCourseData();
+
+            if (courseText && courseText.trim() !== '') {
+                cell.innerHTML = `<div class="course-content">${courseText}</div>
+          <div class="action-icons" style="display: none;">
+            <i class="bi bi-pencil-square edit-icon"></i>
+            <i class="bi bi-trash-fill delete-icon"></i>
+          </div>`;
+            } else {
+                cell.innerHTML = `<div class="course-content"></div>
+          <div class="action-icons" style="display: none;">
+            <i class="bi bi-plus-circle add-icon"></i>
+          </div>`;
+            }
+            // 绑定双击事件
+            cell.addEventListener('dblclick', function (e) {
+                e.stopPropagation();
+                showControls(cell);
+            });
+            // 保存后全局点击隐藏所有图标
+            document.body.addEventListener('click', hideAllControls);
+        }
+
+        // 显示操作图标，仅针对当前单元格
+        function showControls(cell) {
+            hideAllControls(); // 先隐藏其它单元格的图标
+            const iconsDiv = cell.querySelector('.action-icons');
+            if (iconsDiv) {
+                iconsDiv.style.display = 'block';
+                bindIconEvents(cell, iconsDiv);
+            }
+        }
+
+        // 隐藏所有单元格的操作图标
+        function hideAllControls() {
+            const icons = document.querySelectorAll('.action-icons');
+            icons.forEach(div => div.style.display = 'none');
+        }
+
+        // 为操作图标绑定点击事件
+        function bindIconEvents(cell, iconsDiv) {
+            const row = parseInt(cell.getAttribute('data-row'));
+            const col = parseInt(cell.getAttribute('data-col'));
+            const addIcon = iconsDiv.querySelector('.add-icon');
+            if (addIcon) {
+                addIcon.onclick = function (e) {
+                    e.stopPropagation();
+                    hideAllControls();
+                    addCourse(cell, row, col);
+                };
+            }
+            const editIcon = iconsDiv.querySelector('.edit-icon');
+            if (editIcon) {
+                editIcon.onclick = function (e) {
+                    e.stopPropagation();
+                    hideAllControls();
+                    editCourse(cell, row, col);
+                };
+            }
+            const deleteIcon = iconsDiv.querySelector('.delete-icon');
+            if (deleteIcon) {
+                deleteIcon.onclick = function (e) {
+                    e.stopPropagation();
+                    hideAllControls();
+                    deleteCourse(cell, row, col);
+                };
+            }
+        }
+
+        // 新增操作：显示输入框录入课程名称
+        function addCourse(cell, row, col) {
+            cell.innerHTML = `<input type="text" class="course-input" placeholder="输入课程名称">`;
+            const input = cell.querySelector('.course-input');
+            input.focus();
+            input.addEventListener('blur', function () {
+                const value = input.value.trim();
+                updateCell(cell, row, col, value);
+            });
+        }
+
+        // 编辑操作：显示输入框预填当前课程名称
+        function editCourse(cell, row, col) {
+            const currentText = cell.querySelector('.course-content').innerText;
+            cell.innerHTML = `<input type="text" class="course-input" value="${currentText}">`;
+            const input = cell.querySelector('.course-input');
+            input.focus();
+            input.addEventListener('blur', function () {
+                const value = input.value.trim();
+                if (value === '') {
+                    if (confirm("是否确认输入信息为空会删除课程？")) {
+                        updateCell(cell, row, col, '');
+                    } else {
+                        input.focus();
+                    }
+                } else {
+                    updateCell(cell, row, col, value);
+                }
+            });
+        }
+
+        // 删除操作：清空课程信息
+        function deleteCourse(cell, row, col) {
+            updateCell(cell, row, col, '');
+        }
+
+        /**********************
+         *  页面初始化
+         **********************/
+        document.addEventListener('DOMContentLoaded', function () {
+            loadCourseData();
+            const tbody = document.querySelector('#courseTable tbody');
+            // 遍历每一行，跳过第一列（时间）
+            Array.from(tbody.rows).forEach((tr, rowIndex) => {
+                // rowIndex 对应课时行（0~11）
+                Array.from(tr.cells).forEach((cell, cellIndex) => {
+                    if (cellIndex === 0) return; // 第一列为时间，不处理
+                    // data-row 和 data-col 用于记录位置
+                    cell.setAttribute('data-row', rowIndex);
+                    cell.setAttribute('data-col', cellIndex - 1);
+                    // 根据 courseData 填充内容
+                    const courseText = courseData[rowIndex][cellIndex - 1];
+                    updateCell(cell, rowIndex, cellIndex - 1, courseText);
+                });
+            });
+            // 点击页面其他区域时隐藏操作图标
+            document.body.addEventListener('click', hideAllControls);
+        });
+    </script>
+</body>
+
+</html>
