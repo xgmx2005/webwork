@@ -1,69 +1,100 @@
-$(document).ready(function () {
-    // 获取表单和输入框元素
-    const $loginForm = $('#loginForm');
-    const $usernameInput = $('#username');
-    const $passwordInput = $('#password');
-    const $togglePassword = $('#togglePassword');
-    const $loader = $('.loader');
-    const $submitText = $('.submit-text');
-    const $successMessage = $('.success-message');
+// 表单元素
+const loginForm = document.getElementById('loginForm');
+const usernameInput = document.getElementById('username');
+const passwordInput = document.getElementById('password');
+const togglePassword = document.getElementById('togglePassword');
+const loader = document.querySelector('.loader');
+const submitText = document.querySelector('.submit-text');
+const successMessage = document.querySelector('.success-message');
+
+// 密码可见性切换
+togglePassword.addEventListener('click', () => {
+    const isPassword = passwordInput.type === 'password';
+    passwordInput.type = isPassword ? 'text' : 'password';
+    togglePassword.innerHTML = isPassword 
+        ? '<i class="bi bi-eye"></i>'
+        : '<i class="bi bi-eye-slash"></i>';
+});
+
+// 实时表单验证
+const validateField = (input) => {
+    const errorElement = document.querySelector(`[data-error="${input.id}"]`);
+    if (input.value.trim() === '') {
+        errorElement.textContent = `${input.id === 'username' ? '用户名' : '密码'}不能为空`;
+        errorElement.style.display = 'block';
+        input.classList.add('is-invalid');
+        return false;
+    }
+    if (!input.checkValidity()) {
+        errorElement.textContent = input.id === 'username' ? '用户名需4-16位字母或数字' : '密码至少6位字符';
+        errorElement.style.display = 'block';
+        input.classList.add('is-invalid');
+        return false;
+    }
+    errorElement.style.display = 'none';
+    input.classList.remove('is-invalid');
+    return true;
+};
+
+// 输入实时验证
+usernameInput.addEventListener('input', () => validateField(usernameInput));
+passwordInput.addEventListener('input', () => validateField(passwordInput));
+
+// 表单提交处理
+loginForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
     
-    let users = [];
+    const isValid = [usernameInput, passwordInput].every(input => validateField(input));
+    if (!isValid) {
+        usernameInput.focus();
+        return;
+    }
     
-    // 异步加载用户数据
-    $.getJSON('../user.json', function (data) {
-        users = data;
-    }).fail(function () {
-        console.error('无法加载用户数据');
-    });
+    // 显示加载状态
+    submitText.style.display = 'none';
+    loader.style.display = 'block';
+    loginForm.querySelector('button').disabled = true;
     
-    // 切换密码可见性
-    $togglePassword.on('click', function () {
-        const isPassword = $passwordInput.attr('type') === 'password';
-        $passwordInput.attr('type', isPassword ? 'text' : 'password');
-        $togglePassword.html(isPassword ? '<i class="bi bi-eye"></i>' : '<i class="bi bi-eye-slash"></i>');
-    });
-    
-    // 表单提交处理
-    $loginForm.on('submit', function (e) {
-        e.preventDefault();
+    try {
+        // 从localStorage获取用户数据
+        const storedUser = localStorage.getItem(usernameInput.value);
         
-        const username = $usernameInput.val().trim();
-        const password = $passwordInput.val().trim();
-    
-        // 简单的前端验证
-        if (username === '' || password === '') {
-            alert('用户名和密码不能为空');
-            return;
+        if (!storedUser) {
+            throw new Error('登录信息有误');
         }
-    
-        // 显示加载动画并禁用按钮
-        $submitText.hide();
-        $loader.show();
-        $loginForm.find('button').prop('disabled', true);
-    
-        // 模拟服务器验证延迟
-        setTimeout(function () {
-            // 在 users 数组中查找匹配的用户
-            const user = users.find(u => u.username === username && u.password === password);
-    
-            if (user) {
-                $successMessage.show();
-                localStorage.setItem('isLoggedIn', 'true');
-                setTimeout(() => window.location.href = '../htmls/index.html', 2000);
-            } else {
-                alert('用户名或密码错误');
-            }
-    
-            // 恢复按钮状态
-            $submitText.show();
-            $loader.hide();
-            $loginForm.find('button').prop('disabled', false);
-        }, 1500);
-    });
-    
-    // 登录状态检查
-    if (localStorage.getItem('isLoggedIn') === 'true') {
-        window.location.href = '../htmls/index.html';
+        
+        const userData = JSON.parse(storedUser);
+        const decodedPassword = atob(userData.password);
+        
+        if (decodedPassword === passwordInput.value) {
+            successMessage.style.display = 'block';
+            localStorage.setItem('isLoggedIn', 'true');
+            setTimeout(() => window.location.href = 'index.html', 1000);
+        } else {
+            throw new Error('登录信息有误');
+        }
+    } catch (error) {
+        successMessage.style.display = 'none';
+        const errorElement = document.createElement('div');
+        errorElement.className = 'alert alert-danger mt-3';
+        errorElement.innerHTML = 
+            `<i class="bi bi-exclamation-circle me-2"></i>
+            ${error.message}`;
+        loginForm.insertBefore(errorElement, successMessage);
+        setTimeout(() => errorElement.remove(), 3000);
+        
+        // 清空输入并聚焦
+        usernameInput.value = '';
+        passwordInput.value = '';
+        usernameInput.focus();
+    } finally {
+        submitText.style.display = 'block';
+        loader.style.display = 'none';
+        loginForm.querySelector('button').disabled = false;
     }
 });
+
+// 登录状态检查
+if (localStorage.getItem('isLoggedIn') === 'true') {
+    window.location.href = 'index.html';
+}
