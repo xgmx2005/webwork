@@ -1,0 +1,7 @@
+{
+  "interests": [
+    { "value": "eating", "text": "吃饭" },
+    { "value": "basketball", "text": "打篮球" },
+    { "value": "coding", "text": "写代码" }
+  ]
+}

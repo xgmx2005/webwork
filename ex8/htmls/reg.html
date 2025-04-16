@@ -7,33 +7,48 @@
     <!-- 引入 Bootstrap v4 CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- 引入自定义 CSS -->
-    <link rel="stylesheet" href="../css/reg.css">
+    <link rel="stylesheet" href="../CSS/reg.css">
 </head>
 
 <body>
-    <!-- 头部和导航 -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="index.html">首页</a>
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="course.html">我的课表</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login.html">登录</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="reg.html">注册 <span class="sr-only">(current)</span></a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <!-- 引入公共头部 -->
+    <!-- 如果你使用 AJAX 加载 header，也可将 header.html 文件内的内容复制到此处 -->
+    <header id="header">
+        <!-- header.html 内容 -->
+        <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <i class="bi bi-stars me-1"></i>
+                    紫韵学堂
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./index.html">首页</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./course.html">我的课表</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./login.html">登录</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./reg.html">注册</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
 
     <!-- 注册表单容器 -->
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <!-- 使用card包裹表单 -->
+                <!-- 使用 card 包裹表单 -->
                 <div class="card mt-5">
                     <div class="card-body">
                         <h3 class="card-title text-center">注册</h3>
@@ -66,9 +81,7 @@
                             <div class="form-group" id="interestGroup" style="display: none;">
                                 <label for="interestSelect">兴趣爱好:</label>
                                 <select class="form-control" id="interestSelect">
-                                    <option value="eating">吃饭</option>
-                                    <option value="basketball">打篮球</option>
-                                    <option value="coding">写代码</option>
+                                    <!-- 选项将通过 Ajax 动态加载 -->
                                 </select>
                             </div>
                             <input type="submit" class="btn btn-primary btn-block" id="submitBtn" value="注册">
@@ -79,9 +92,26 @@
         </div>
     </div>
 
+    <!-- 引入 footer -->
+    <footer>
+        <!-- footer.html 内容 -->
+        <footer class="bg-light py-4 mt-5">
+            <div class="container text-center">
+                <div class="mb-3">
+                    <a href="#" class="text-decoration-none me-3" style="color: var(--main-purple);">关于我们</a>
+                    <a href="#" class="text-decoration-none me-3" style="color: var(--main-purple);">帮助中心</a>
+                    <a href="#" class="text-decoration-none" style="color: var(--main-purple);">服务条款</a>
+                </div>
+                <p class="text-muted mb-0">
+                    <i class="bi bi-c-circle"></i> 2024 紫韵学堂 版权所有
+                </p>
+            </div>
+        </footer>
+    </footer>
+
     <!-- 引入 jQuery 和 Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <!-- 引入自定义 JS -->
     <script src="../js/reg.js"></script>
 </body>
