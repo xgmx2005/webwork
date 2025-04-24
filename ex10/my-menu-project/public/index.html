@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>学生信息管理系统</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <style>
+    .student-list {
+      margin-top: 20px;
+    }
+
+    .student-item {
+      margin-bottom: 8px;
+    }
+
+    button {
+      margin-left: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <h1>ex10</h1>
+    <h2>学生信息管理系统</h2>
+
+    <input v-model="name" placeholder="姓名" />
+    <input v-model.number="age" type="number" min="0" />
+    <label>
+      <input type="radio" value="male" v-model="gender" /> 男
+    </label>
+    <label>
+      <input type="radio" value="female" v-model="gender" /> 女
+    </label>
+    <button @click="addStudent">添加学生</button>
+
+    <ul class="student-list">
+      <li v-for="(student, index) in students" :key="index" class="student-item">
+        {{ student.name }} - {{ student.age }}岁 - {{ student.gender }}
+        <button @click="removeStudent(index)">删除</button>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    const { createApp, ref } = Vue;
+
+    createApp({
+      setup() {
+        const name = ref('');
+        const age = ref(18);
+        const gender = ref('male');
+        const students = ref([]);
+
+        const addStudent = () => {
+          if (name.value.trim() === '') return;
+          students.value.push({
+            name: name.value,
+            age: age.value,
+            gender: gender.value
+          });
+          name.value = '';
+        };
+
+        const removeStudent = (index) => {
+          students.value.splice(index, 1);
+        };
+
+        return {
+          name,
+          age,
+          gender,
+          students,
+          addStudent,
+          removeStudent
+        };
+      }
+    }).mount('#app');
+  </script>
+</body>
+
+</html>
