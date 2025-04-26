@@ -1,83 +1,23 @@
+<!-- public/index.html -->
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <title>学生信息管理系统</title>
-  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-  <style>
-    .student-list {
-      margin-top: 20px;
-    }
-
-    .student-item {
-      margin-bottom: 8px;
-    }
-
-    button {
-      margin-left: 8px;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- 引入 Bootstrap 3.3.7 CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 </head>
 
 <body>
-  <div id="app">
-    <h1>ex10</h1>
-    <h2>学生信息管理系统</h2>
+  <div id="app"></div>
 
-    <input v-model="name" placeholder="姓名" />
-    <input v-model.number="age" type="number" min="0" />
-    <label>
-      <input type="radio" value="male" v-model="gender" /> 男
-    </label>
-    <label>
-      <input type="radio" value="female" v-model="gender" /> 女
-    </label>
-    <button @click="addStudent">添加学生</button>
+  <!-- Vue CLI 会自动注入构建后的脚本 -->
 
-    <ul class="student-list">
-      <li v-for="(student, index) in students" :key="index" class="student-item">
-        {{ student.name }} - {{ student.age }}岁 - {{ student.gender }}
-        <button @click="removeStudent(index)">删除</button>
-      </li>
-    </ul>
-  </div>
-
-  <script>
-    const { createApp, ref } = Vue;
-
-    createApp({
-      setup() {
-        const name = ref('');
-        const age = ref(18);
-        const gender = ref('male');
-        const students = ref([]);
-
-        const addStudent = () => {
-          if (name.value.trim() === '') return;
-          students.value.push({
-            name: name.value,
-            age: age.value,
-            gender: gender.value
-          });
-          name.value = '';
-        };
-
-        const removeStudent = (index) => {
-          students.value.splice(index, 1);
-        };
-
-        return {
-          name,
-          age,
-          gender,
-          students,
-          addStudent,
-          removeStudent
-        };
-      }
-    }).mount('#app');
-  </script>
+  <!-- 引入 jQuery 和 Bootstrap JS（Bootstrap 3 需要依赖 jQuery） -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 
 </html>
