@@ -10,7 +10,10 @@ app = Flask(__name__)
 SECRET_KEY = "zjvivi13107"
 EXPRIRATTION = datetime.timedelta(hours=1)
 # 模拟的用户数据库
-users_db = {"user": "zjvivi", "password": "123456"}
+users_db = {
+    "user": "zjvivi", 
+    "password": "123456"
+    }
 
 
 # 使用JWT生成token
@@ -80,9 +83,8 @@ def get_foods():
 def login():
     username = request.json.get("userName")
     password = request.json.get("userPwd")
-
     # if username =='zjvivi' and password =='123456':
-    if users_db["user"] == username and users_db["password"] == password:
+    if users_db["user"] == username and users_db["password"]== password:
         # token =generate_token()#生成随机token
         token = generate_jwt_token({"username": username})
         return api_response(200, "登录成功", {"token": token})
@@ -123,7 +125,15 @@ def verify_jwt_token(token):
         return None, "无效的token"
 
 
-CORS(app, resources={r"/api/*": {"origins": "http://127.0.0.1:5000"}})
+CORS(
+    app,
+    resources={
+        r"/api/*": {"origins": ["http://127.0.0.1:5000", "http://localhost:8081"]}
+    },
+)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+    

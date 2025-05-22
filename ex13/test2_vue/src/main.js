@@ -1,15 +1,6 @@
-import './style.css'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import { createApp } from 'vue'
-import App from './App.vue'
-import axios from 'axios'
 
-axios.interceptors.request.use((config) => {
-  const token = localStorage.getItem('token')
-  if (token) {
-    config.headers.Authorization = `Bearer ${token}`
-  }
-  return config
-})
+import { createApp } from 'vue';
+import App from './App.vue';
 
-createApp(App).mount('#app')
+createApp(App).mount('#app');
+
